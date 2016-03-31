@@ -1,8 +1,9 @@
-﻿// iTunnel mod with restore mode comm support
-// Based on iPhone_tunnel by novi (novi.mad@gmail.com ) http://novis.jimdo.com
-// thanks
-// http://i-funbox.com/blog/2008/09/itunesmobiledevicedll-changed-in-itunes-80/
-// 2010 msftguy
+﻿// ios-usbmux-tunnel main.cpp -- Make TCP tunnel connections via usbmux
+//
+//   Copyright (C) 2016 Foxlet <foxlet@furcode.co>
+//   Copyright (C) 2010 msftguy
+//   Based on iPhone_tunnel by novi <novi.mad@gmail.com> http://novis.jimdo.com
+//
 
 #include "main.h"
 
@@ -132,13 +133,14 @@ int parse_args(int argc, char *argv [])
 void usage()
 {
 printf(
-			"\niphone_tunnel v2.0 for Win/Mac\n"
-			"Created by novi. (novi.mad@gmail.com)\n"
-			"Restore mode hack by msft.guy ((rev 5))\n"
+			"\nios-usbmux-tunnel r1\n"
+            "Copyright (C) 2016 Foxlet <foxlet@furcode.co>\n"
+            "Copyright (C) 2010 msftguy\n"
+			"Created by novi <novi.mad@gmail.com>\n"
 			"\n"
-			"Usage: iphone_tunnel --tunnel [--iport <iPhone port>] [--lport <Local port>]\n"
-			"OR: iphone_tunnel --autoboot\tto kick out of the recovery mode\n"
-			"OR: iphone_tunnel [--ibss <iBSS file>] [--exploit <iBSS USB exploit payload>]\n"
+			"Usage: usbmux-tunnel --tunnel [--iport <iOS port>] [--lport <Local port>]\n"
+			"OR: usbmux-tunnel --autoboot\tto kick out of the recovery mode\n"
+			"OR: usbmux-tunnel [--ibss <iBSS file>] [--exploit <iBSS USB exploit payload>]\n"
 			"\t[--ibec <iBEC file>] [--ramdisk <ramdisk file>]\n"
 			"\t[--devicetree <devicetree file>] [--kernelcache <kernelcache file>]\n"
 			"\t[--ramdisk-command <command to execute after sending ramdisk, default is 'ramdisk'>]\n"
@@ -148,10 +150,10 @@ printf(
 			"\n"
 			
 			"Examples:\n"
-			"\tiphone_tunnel --lport 2022\n"
-			"\tiphone_tunnel --ibec iBEC_file_from_custom_FW --ramdisk created_ramdisk.dmg.ssh --devicetree DevicetreeXXX.img3 --kernelcache kernelcache_file_from_custom_FW --ramdisk-command \"ramdisk 0x90000000\"\n"
+			"\tusbmux-tunnel --lport 2022\n"
+			"\tusbmux-tunnel --ibec iBEC_file_from_custom_FW --ramdisk created_ramdisk.dmg.ssh --devicetree DevicetreeXXX.img3 --kernelcache kernelcache_file_from_custom_FW --ramdisk-command \"ramdisk 0x90000000\"\n"
 			"\n"
-			"Default ports are 22(iPhone) <-> %hu(this machine)\n", default_local_port
+			"Default ports are 22(iOS Device) <-> %hu(Local Device)\n", default_local_port
 			);
 }
 

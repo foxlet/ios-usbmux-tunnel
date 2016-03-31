@@ -1,3 +1,10 @@
+// ios-usbmux-tunnel log.cpp -- Make TCP tunnel connections via usbmux
+//
+//   Copyright (C) 2016 Foxlet <foxlet@furcode.co>
+//   Copyright (C) 2010 msftguy
+//   Based on iPhone_tunnel by novi <novi.mad@gmail.com> http://novis.jimdo.com
+//
+
 #include <stdarg.h>
 #include <stdio.h>
 #include <libmd/libMobiledevice.h>
